@@ -61,7 +61,8 @@ def query_ChatGPT(input_data, count, code_api_list):
     return response, count
 
 def query_ChatGPT_free(question):
-    api_key = "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"
+    # put your key at here
+    api_key = ""
     headers = {
         "Authorization": 'Bearer ' + api_key,
     }

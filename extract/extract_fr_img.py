@@ -27,18 +27,6 @@ output_file ("image", "objects", "bounding_boxes")
 gpu 12000M
 """
 
-"""
-python extract/extract_fr_img.py \
-    --test_task DenseCap \
-    --config_file ./stage1/configs/GRiT_B_DenseCap_ObjectDet.yaml \
-    --confidence_threshold 0.5 \
-    --image_folder  \
-    --input_file  \
-    --output_file  \
-    --opts MODEL.WEIGHTS ./ckpt/grit_b_densecap_objectdet.pth
-"""
-
-
 
 def setup_cfg(args):
     cfg = get_cfg()
