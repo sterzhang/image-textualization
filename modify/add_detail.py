@@ -151,16 +151,9 @@ In both bathrooms, the emphasis on cleanliness, orderliness, and a harmonious re
 """
 
 
-def load_api_keys_from_txt(key_path):
-    key_list = []
-    with open(key_path, 'r') as file:
-        for line in file:
-            matches = re.findall(r'sk-\w+', line)
-            key_list += matches
-    return key_list
 
 def query_ChatGPT_free(question):
-    api_key = "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"
+    api_key = ""
     headers = {
         "Authorization": 'Bearer ' + api_key,
     }
@@ -190,6 +183,8 @@ def main(args):
         for i, line in enumerate(tqdm(input_file, total=total_lines, desc="Adding objects to the description")):
             if i < args.start_line:
                 continue
+            if i >= args.end_line:
+                break
             output_str = ""  
             json_obj = json.loads(line)
             objects = json_obj.get("objects", [])
@@ -201,9 +196,8 @@ def main(args):
             description = json_obj.get("description")
 
             add_obj_num = len(objects)
-            del_obj_num = len(del_obj_from_desc)
 
-            if add_obj_num < 4:
+            if add_obj_num < 3:
                 modified_description = description
             else:
                 norm_boxes = []
@@ -233,9 +227,10 @@ def main(args):
                 output_str += "Modified image description:\n"
 
                 prompt = additional_info + "\n\n" + output_str
+                print(prompt)
                 
                 response = query_ChatGPT_free(prompt)
-                time.sleep(0.3)
+                # time.sleep(0.3)
                 modified_description = response["choices"][0]["message"]["content"]
             
             # Write to output file
@@ -248,11 +243,12 @@ if __name__ == "__main__":
     parser.add_argument("--input_file", type=str, help="Path to the input JSON file.")
     parser.add_argument("--output_file", type=str, help="Path to the output JSONL file.")
     parser.add_argument("--start_line", type=int, default=0, help="Start line in the input file.")
+    parser.add_argument("--end_line", type=int, default=999999999, help="Start line in the input file.")
     args = parser.parse_args()
     main(args)
 
 """
-python modify/add_detail.py --input_file /home/zhangjianshu/Mercury/llava/llava_stage3.jsonl \
---output_file /home/zhangjianshu/Mercury/llava/llava_stage4.jsonl \
+python modify/add_detail.py --input_file /home/zhangjianshu/Mercury/visualize2.jsonl \
+--output_file /home/zhangjianshu/Mercury/visualize3.jsonl \
 --start_line 0
 """
