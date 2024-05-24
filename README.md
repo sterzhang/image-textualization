@@ -13,6 +13,16 @@
 See instructions in [Install.md](https://github.com/sterzhang/image-textualization/blob/main/docs/install.md).
 
 ## Datasets
+- COCO: [train2017](http://images.cocodataset.org/zips/train2017.zip)
+After downloading all of them, organize the data as follows in `./dataset/`,
+- SAM: [SAM](https://ai.meta.com/datasets/segment-anything-downloads/), here we use sa_000000.tar ~ sa_000024.tar
+```
+├── coco
+│   └── train2017
+├── sam
+    └── images
+```
+
 
 ## Evaluation
 ### DenseCap Benchmark
