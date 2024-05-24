@@ -1,5 +1,6 @@
-# Mercury
-- [x] code for extract, filter, modify
-- [ ] open-source our fine-grained dataset
-- [ ] code for dpo
+# Image Textualization: An Automatic Framework for Generating Rich and Detailed Image Descriptions
+
+The data can be downloaded directly from the `description/` folder.
+
+
 
