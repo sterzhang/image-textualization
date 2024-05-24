@@ -41,12 +41,12 @@ export CUDA_HOME=/usr/local/cuda
 ```
 
 ## 1. Clone Repositories and Related Packages
-### 1.1 Mercury
+### 1.1 image-textualization
 ```bash
-git clone https://github.com/sterzhang/Mercury.git
-cd Mercury
-conda create --name mercury python=3.8 -y
-conda activate mercury
+git clone https://github.com/sterzhang/image-textualization.git
+cd image-textualization
+conda create --name image-textualization python=3.8 -y
+conda activate image-textualization
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r requirements.txt
 ```
@@ -59,7 +59,7 @@ pip install -e .
 ```
 ### 1.3 GroundingDINO
 ```bash
-cd ../Mercury/filter
+cd ../image-textualization/filter
 git clone https://github.com/IDEA-Research/GroundingDINO.git
 cd GroundingDINO/
 pip install -e .
@@ -68,7 +68,7 @@ pip install -e .
 ## 2. Download Models
 ### 2.1 Create Folder
 ```bash
-cd ../Mercury
+cd ../image-textualization
 mkdir ckpt && cd ckpt
 ```
 ### 2.2 Checkpoint of GRiT
