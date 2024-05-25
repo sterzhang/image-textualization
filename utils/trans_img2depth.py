@@ -9,7 +9,10 @@ import warnings
 import argparse
 
 warnings.filterwarnings("ignore")  
+checkpoint = "vinvino02/glpn-nyu"
 
+image_processor = AutoImageProcessor.from_pretrained(checkpoint)
+model = AutoModelForDepthEstimation.from_pretrained(checkpoint)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Compute depth of focus')
@@ -54,10 +57,10 @@ if __name__ == "__main__":
                 if image_array.ndim == 2:               
                     continue
 
-                checkpoint = "vinvino02/glpn-nyu"
+                # checkpoint = "vinvino02/glpn-nyu"
 
-                image_processor = AutoImageProcessor.from_pretrained(checkpoint)
-                model = AutoModelForDepthEstimation.from_pretrained(checkpoint)
+                # image_processor = AutoImageProcessor.from_pretrained(checkpoint)
+                # model = AutoModelForDepthEstimation.from_pretrained(checkpoint)
                 # image_processor = AutoImageProcessor.from_pretrained(checkpoint, force_download=True,resume_download=False)
                 # model = AutoModelForDepthEstimation.from_pretrained(checkpoint,  force_download=True, resume_download=False)
                 pixel_values = image_processor(image, return_tensors="pt").pixel_values
