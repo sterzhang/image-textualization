@@ -1,5 +1,11 @@
 # Image Textualization: An Automatic Framework for Generating Rich and Detailed Image Descriptions
+<img width="956" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/50dd94f2-ca9b-4aa8-a8b3-5de403111273">
+
+## Visualization
+<img width="943" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/4f92f45a-d1c2-4576-b008-641534e0b743">
+
 <img width="1029" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/4048a807-bab8-40dc-959f-dd6ddeb10b7c">
+
 
 
 🔥 The data can be downloaded directly from the `description/` folder.
