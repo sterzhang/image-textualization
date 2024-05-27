@@ -2,26 +2,40 @@
 <img width="1029" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/4048a807-bab8-40dc-959f-dd6ddeb10b7c">
 
 
-🔥 The data can be downloaded directly from the `description/` folder.
+🔥 The data can be downloaded directly from the `image-textualization-data/` folder.
 
 ## Contents
 - [Install](#install)
 - [Datasets](#datasets)
+- [Use](#use)
 - [Evaluation](#evaluation)
 
 ## Install
-See instructions in [Install.md](https://github.com/sterzhang/image-textualization/blob/main/docs/install.md).
+See detailed instructions in [Install.md](https://github.com/sterzhang/image-textualization/blob/main/docs/install.md).
 
 ## Datasets
-- COCO: [train2017](http://images.cocodataset.org/zips/train2017.zip), here we use a subset of 50k coco dataset.
-- SAM: [SAM](https://ai.meta.com/datasets/segment-anything-downloads/), here we just use sa_000000.tar ~ sa_000024.tar
+### Images
+- COCO: Download here [train2017](http://images.cocodataset.org/zips/train2017.zip). 
+- SAM: Click here [SAM](https://ai.meta.com/datasets/segment-anything-downloads/) and download sa_000000.tar ~ sa_000024.tar.
 
-After downloading all of them, organize the data as follows in `./dataset/`:
+After downloading, organize the image datasets as follows in `./dataset/`:
 ```
 ├── coco
 │   └── train2017
 ├── sam
     └── images
+```
+### Descriptions
+We open-source 165k detailed descriptions in `image-textualization-data/`:
+```
+├── image-textualization-data/
+    └── image-textualization-coco-50k-gpt4v.jsonl
+    └── image-textualization-coco-50k-llava.jsonl
+    └── image-textualization-sam-65k.jsonl
+```
+The format of our jsonl is below:
+```json
+{"image":"xxx.jpg", "question":"xxxx?", "description":"xxxxxx"}
 ```
 
 ## How To Use
