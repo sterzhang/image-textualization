@@ -7,7 +7,7 @@
 ## Contents
 - [Install](#install)
 - [Datasets](#datasets)
-- [Use](#how to use)
+- [Use](#use)
 - [Evaluation](#evaluation)
 - [Visualization](#visualization)
 
@@ -39,7 +39,7 @@ The format of our jsonl is below:
 {"image":"xxx.jpg", "question":"xxxx?", "description":"xxxxxx"}
 ```
 
-## How To Use
+## Use
 ### Extract Objects from Images
 ```json
 {"image": "xxx.jpg"} 
