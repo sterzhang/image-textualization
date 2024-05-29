@@ -41,63 +41,35 @@ The format of our jsonl is below:
 
 ## How To Use
 ### Extract Objects from Images
-```bash
-python extract/extract_fr_img.py \
-    --test_task DenseCap \
-    --config_file ./extract/configs/GRiT_B_DenseCap_ObjectDet.yaml \
-    --confidence_threshold 0.55 \
-    --image_folder  your-image-path/ \
-    --input_file  image.jsonl \
-    --output_file  obj_extr_from_img.jsonl \
-    --start_line 0 \
-    --end_line 999 \
-    --visualize_output visualize-output-path \
-    --opts MODEL.WEIGHTS ./ckpt/grit_b_densecap_objectdet.pth 
+```json
+{"image": "xxx.jpg"} 
+⬇️
+{"image": "xxx.jpg", "extr_obj_fr_img": ["obj1","obj2"], "bounding_boxes": [[206, 137, 426, 364], [418, 119, 639, 388]]}
 ```
+
 ### Extract Objects from Descriptions
-- chatgpt3.5 version
-```bash
-python extract/extract_fr_desc.py \
-    --input_file_path description.jsonl \
-    --output_file_path obj_extr_from_desc.jsonl \
-    --api_key_path api_key.txt \
-    --start_line 0
+```json
+{"image": "xxx.jpg", "description": "xxxxxxxx."} 
+⬇️
+{"image": "xxx.jpg", "extr_obj_fr_desc": ["obj1","obj2"], "description": "xxxxxxxx."}
 ```
-- llama version
-```bash
-CUDA_VISIBLE_DEVICES=4,5,6,7 python ./extract/extract_fr_desc-llama.py \
-    --input_file description.jsonl \
-    --output_file obj_extr_from_desc.jsonl \
-    --stop_tokens "<|eot_id|>" \
-    --prompt_structure "<|begin_of_text|><|start_header_id|>user<|end_header_id|>{input}<|eot_id|><|start_header_id|>assistant<|end_header_id|>" \
-    --start_line 0 \
-    --end_line 999
+
+
+### Filter Hallucinations of extr_obj_fr_desc
+```json
+{"image": "xxx.jpg", "extr_obj_fr_desc": ["obj1","obj2"], "description": "xxxxxxxx."} 
+⬇️
+{"image": "xxx.jpg", "del_obj_from_desc": ["hal2"], "description": "xxxxxxxx."}
 ```
-### Filter Hallucinations of Obj_extr_from_desc
-```bash
-python filter/filter_fr_desc.py \
-    --model_config ./filter/GroundingDINO/groundingdino/config/GroundingDINO_SwinB_cfg.py \
-    --model_checkpoint ./ckpt/groundingdino_swinb_ogc.pth \
-    --box_threshold 0.20 \   
-    --text_threshold 0.18 \    
-    --input_file obj_extr_from_desc.jsonl \
-    --output_file hal_from_desc.jsonl \
-    --image_folder your-image-path/ \
-    --start_line 0 \
-    --end_line 999
+
+### Filter Hallucinations of extr_obj_fr_img
+```json
+{"image": "xxx.jpg", "extr_obj_fr_img": ["obj1","obj2"], "bounding_boxes": [[206, 137, 426, 364], [418, 119, 639, 388]]} 
+⬇️
+{"image": "xxx.jpg", "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]]}
 ```
-### Filter Hallucinations of Obj_extr_from_img
-```bash
-python filter/filter_fr_img.py \
-    --model-config ./filter/GroundingDINO/groundingdino/config/GroundingDINO_SwinB_cfg.py \
-    --model-checkpoint ./ckpt/groundingdino_swinb_ogc.pth \
-    --box-threshold 0.45 \
-    --text-threshold 0.15 \
-    --input-file-path obj_extr_from_img.jsonl \
-    --output-file-path obj_extr_from_img_wo_hal.jsonl \
-    --start_line 0 \
-    --end_line 999
-```
+
+
 ### Transfer Image to Depth Map
 ```bash
 python ./utils/trans_img2depth.py \
@@ -108,27 +80,18 @@ python ./utils/trans_img2depth.py \
     --end_line 999
 ```
 
-### Fine-grained Annotation
-```bash
-python fg_annotation/mask_depth.py \
-    --input_path image-box-caption.jsonl \
-    --output_path fg_anno.jsonl \
-    --image_folder your-image-folder\ \
-    --image_depth_folder depth-map-folder/ \
-    --start_line 0 \
-    --end_line 999
+### Fine-grained Annotation for exist_obj_from_img
+```json
+{"image": "xxx.jpg", "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], } 
+⬇️
+{"image": "xxx.jpg", "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480}
 ```
 
 ### Description Refinement
-- only for llama version
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python ./refine/add_detail.py \
---input_file fg_anno.jsonl \
---output_file refined_desc.jsonl \
---stop_tokens "<|eot_id|>" \
---prompt_structure "<|begin_of_text|><|start_header_id|>user<|end_header_id|>{input}<|eot_id|><|start_header_id|>assistant<|end_header_id|>" \
---start_line 0 \
---end_line 999
+```json
+{"image": "xxx.jpg", "del_obj_from_desc": ["hal2"], "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480, "description": "xxxxxxxx."}
+⬇️
+{"image": "xxx.jpg", "original_description": "xxxxx", "modified_description": "xxxxxxxx."}
 ```
 
 
