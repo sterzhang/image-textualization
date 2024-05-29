@@ -6,9 +6,7 @@ import sys
 import time
 from tqdm import tqdm
 
-"""
-CUDA_VISIBLE_DEVICES=0,1 python /ssddata/rpi/code2/VLLM/examples/llama_modify.py --input_file /ssddata/rpi/data/mercury/coco_5w_0_55_fg_ready.jsonl --output_file /ssddata/rpi/data/mercury/5-14/coco_5w_0_55_fg_modi-0.jsonl --stop_tokens "<|eot_id|>" --prompt_structure "<|begin_of_text|><|start_header_id|>user<|end_header_id|>{input}<|eot_id|><|start_header_id|>assistant<|end_header_id|>" --start_line 1837 --end_line 15000
-"""
+
 additional_info = """
 ###TASK Description###
 You are a helpful language assitant. Imagine visualizing an image based on its description. Now, your task is to make the Original Description more detailed. You'll need to use the subsequent provided Objects, along with the corresponding extra information of Relative Spatial Positioning, Relative Distance from the Lens, and Relative Size Proportion in Images (Percentage), to better assist you in adding these Objects to the original description. 
@@ -213,8 +211,11 @@ def main(args):
     stop_tokens = args.stop_tokens.split(",")
 
     with open(args.input_file, 'r') as input_file, open(args.output_file, 'a') as output_file:
-
-        llm = LLM(model="/home/zhangjianshu/llama3/Meta-Llama-3-70B-Instruct", tensor_parallel_size=4)
+        # prompts = []
+        # flags = []
+        # imgs = []
+        # ori_descs = []
+        llm = LLM(model="./llama3/Meta-Llama-3-70B-Instruct", tensor_parallel_size=4)
         for i, line in enumerate(tqdm(input_file, total=args.end_line, desc="Adding objects to the description")):
             if i < args.start_line:
                 continue
@@ -231,7 +232,7 @@ def main(args):
             height = json_obj.get("height")
             description = json_obj.get("description")
 
-
+            # add_obj_num = len(objects)
             add_obj_num = min(len(objects), 10)
 
             if add_obj_num < 2:
@@ -299,6 +300,7 @@ if __name__ == "__main__":
                         help="Prefix for generation")
     args = parser.parse_args()
     main(args)
+
 
 
 
