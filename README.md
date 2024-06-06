@@ -2,7 +2,7 @@
 ![image](https://github.com/sterzhang/image-textualization/assets/119802220/c72ff11a-2b39-4e20-88b5-d3f0d8f9eb42)
 
 
-🔥 The data can be downloaded directly from the `image-textualization-data/` folder.
+🔥 The data can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/).
 
 ## Contents
 - [Install](#install)
