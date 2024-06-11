@@ -7,8 +7,6 @@
 ## Contents
 - [Install](#install)
 - [Datasets](#datasets)
-- [Use](#use)
-- [Evaluation](#evaluation)
 - [Visualization](#visualization)
 
 ## Install
