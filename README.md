@@ -26,18 +26,7 @@ After downloading, organize the image datasets as follows in `./dataset/`:
 ├── sam
     └── images
 ```
-### Descriptions
-We open-source 165k detailed descriptions in `image-textualization-data/`:
-```
-├── image-textualization-data/
-    └── image-textualization-coco-50k-gpt4v.jsonl
-    └── image-textualization-coco-50k-llava.jsonl
-    └── image-textualization-sam-65k.jsonl
-```
-The format of our jsonl is below:
-```json
-{"image":"xxx.jpg", "question":"xxxx?", "description":"xxxxxx"}
-```
+
 
 
 
