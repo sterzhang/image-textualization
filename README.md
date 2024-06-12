@@ -29,6 +29,12 @@ After downloading, organize the image datasets as follows in `./dataset/`:
     └── images
 ```
 
+
+
+## Visualization
+<img width="833" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/9562860a-96b6-4253-9305-d133161eea70">
+
+
 ## Acknowledgement
 
 If you find our work useful for your research or applications, please cite using this BibTeX:
@@ -42,9 +48,3 @@ If you find our work useful for your research or applications, please cite using
       primaryClass={cs.CV}
 }
 ```
-
-
-
-
-## Visualization
-<img width="833" alt="image" src="https://github.com/sterzhang/image-textualization/assets/119802220/9562860a-96b6-4253-9305-d133161eea70">
