@@ -29,6 +29,20 @@ After downloading, organize the image datasets as follows in `./dataset/`:
     └── images
 ```
 
+## Acknowledgement
+
+If you find our work useful for your research or applications, please cite using this BibTeX:
+```bibtex
+@misc{pi2024image,
+      title={Image Textualization: An Automatic Framework for Creating Accurate and Detailed Image Descriptions}, 
+      author={Renjie Pi and Jianshu Zhang and Jipeng Zhang and Rui Pan and Zhekai Chen and Tong Zhang},
+      year={2024},
+      eprint={2406.07502},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
 
 
 
