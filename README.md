@@ -6,7 +6,7 @@
 - [ ] Release the usage of our IT framework.
 - [ ] Data cleaning is on-going. Expect to open-source 170K data before 6/17.
 
-🔥 Now, 150K data can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/). After data cleaning, we will release all the data.
+🔥 Now, 165K data can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/). (Data cleaning...)
 
 ## Contents
 - [Install](#install)
@@ -27,6 +27,7 @@ After downloading, organize the image datasets as follows in `./dataset/`:
 │   └── train2017
 ├── sam
     └── images
+├── vg
 ```
 
 
