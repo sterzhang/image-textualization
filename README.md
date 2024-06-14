@@ -1,12 +1,14 @@
 # Image Textualization: An Automatic Framework for Creating Accurate and Detailed Image Descriptions
 ![image](https://github.com/sterzhang/image-textualization/assets/119802220/c72ff11a-2b39-4e20-88b5-d3f0d8f9eb42)
 
+### Plan
 - [x] Main code for IT framework.
+- [x] Data cleaning is on-going. Expect to open-source 170K data before 6/17.
 - [ ] Code for evaluation.
 - [ ] Release the usage of our IT framework.
-- [ ] Data cleaning is on-going. Expect to open-source 170K data before 6/17.
 
-🔥 Now, 165K data can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/). (Data cleaning...)
+
+🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/).
 
 ## Contents
 - [Install](#install)
@@ -19,7 +21,8 @@ See detailed instructions in [Install.md](https://github.com/sterzhang/image-tex
 ## Datasets
 ### Images
 - COCO: Download here [train2017](http://images.cocodataset.org/zips/train2017.zip). 
-- SAM: Click here [SAM](https://ai.meta.com/datasets/segment-anything-downloads/) and download sa_000000.tar ~ sa_000024.tar.
+- SAM: Click here [SAM](https://ai.meta.com/datasets/segment-anything-downloads/) (sa_000000.tar ~ sa_000024.tar).
+- VG: Click here [VG](https://homes.cs.washington.edu/~ranjay/visualgenome/api.html).
 
 After downloading, organize the image datasets as follows in `./dataset/`:
 ```
