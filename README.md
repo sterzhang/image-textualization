@@ -13,7 +13,7 @@
 ## Contents
 - [Install](#install)
 - [Datasets](#datasets)
-- [Use] (#use)
+- [Use](#use)
 - [Visualization](#visualization)
 
 ## Install
