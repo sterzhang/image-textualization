@@ -181,7 +181,7 @@ if __name__ == "__main__":
                 
             output_data = {
                 'image': image,
-                'objects': objects,
+                'exist_obj_from_img': objects,
                 'bounding_boxes': bounding_boxes,
                 'object_depth': box_depth_score,
                 'size': box_size,
