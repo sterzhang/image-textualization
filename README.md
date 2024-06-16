@@ -13,10 +13,11 @@
 ## Contents
 - [Install](#install)
 - [Datasets](#datasets)
+- [Use] (#use)
 - [Visualization](#visualization)
 
 ## Install
-See detailed instructions in [Install.md](https://github.com/sterzhang/image-textualization/blob/main/docs/install.md).
+See detailed instructions in [install.md](https://github.com/sterzhang/image-textualization/blob/main/docs/install.md).
 
 ## Datasets
 ### Images
@@ -33,6 +34,8 @@ After downloading, organize the image datasets as follows in `./dataset/`:
 ├── vg
 ```
 
+## Use
+After install all the requirements, you can follow [use.md](https://github.com/sterzhang/image-textualization/blob/main/docs/use.md) to generate description on your datasets.
 
 
 ## Visualization
