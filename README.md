@@ -5,7 +5,7 @@
 - [x] Main code for IT framework.
 - [x] Data cleaning is on-going. Expect to open-source 170K data before 6/17.
 - [ ] Code for evaluation.
-- [ ] Release the usage of our IT framework.
+- [x] Release the usage of our IT framework.
 
 
 🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/).
