@@ -21,7 +21,7 @@ def main(args):
 
     with open(args.input_file, 'r') as input_file:
         with open(args.output_file, 'a') as output_file:
-            for i, line in enumerate(tqdm(input_file, total=total_lines, desc="Stage2.1 - filter hallucination objects from the description")):
+            for i, line in enumerate(tqdm(input_file, total=total_lines, desc="Filter hallucination objects from the description")):
                 if i < args.start_line:
                     continue  # Skip lines until the start_line is reached
                 if i >= args.end_line:
@@ -29,7 +29,7 @@ def main(args):
                 json_obj = json.loads(line)
                 img = json_obj.get("image")
                 # desc = json_obj.get("description")
-                extr_obj = json_obj.get("extr_obj") 
+                extr_obj = json_obj.get("extr_obj_fr_desc") 
 
                 des_exist_obj_idx = []
                 for idx, obj in enumerate(extr_obj):
