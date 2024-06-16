@@ -234,10 +234,7 @@ def main(args):
     stop_tokens = args.stop_tokens.split(",")
 
     with open(args.input_file, 'r') as input_file, open(args.output_file, 'a') as output_file:
-        # prompts = []
-        # flags = []
-        # imgs = []
-        # ori_descs = []
+        
         llm = LLM(model="./llama3_70b_instruct", tensor_parallel_size=4)
         for i, line in enumerate(tqdm(input_file, total=args.end_line, desc="Adding objects to the description")):
             if i < args.start_line:
@@ -310,8 +307,7 @@ def main(args):
 
             data = {
                 "image": image,
-                "original_description": description,
-                "modified_description": modified_desc
+                "description": modified_desc
             }
             json.dump(data, output_file)
             output_file.write('\n')
