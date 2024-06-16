@@ -21,11 +21,6 @@ import warnings
 warnings.filterwarnings("ignore") 
 WINDOW_NAME = "Extract objects from image"
 
-"""
-input_file ("image")
-output_file ("image", "objects", "bounding_boxes")
-gpu 12000M
-"""
 
 
 def setup_cfg(args):
@@ -137,7 +132,11 @@ if __name__ == "__main__":
                         break
                     data = json.loads(line)
                     image_path = data['image']
-                    img = read_image(os.path.join(args.image_folder, image_path), format="BGR")
+                    try:
+                        img = read_image(os.path.join(args.image_folder, image_path), format="BGR")
+                    except:
+                        print("Skip")
+                        continue 
                     predictions, visualized_output = demo.run_on_image(img)
 
                     # bounding box in image -> details in text format
@@ -153,7 +152,7 @@ if __name__ == "__main__":
                         bounding_box_list.append(box)
 
                     # construct data dictionary
-                    data = {'image': image_path, 'objects': object_list, 'bounding_boxes': bounding_box_list}
+                    data = {'image': image_path, 'extr_obj_from_img': object_list, 'bounding_boxes': bounding_box_list}
                     f.write(json.dumps(data) + '\n')
 
                     if args.visualize_output:
