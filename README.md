@@ -8,7 +8,7 @@
 - [x] Release the usage of our IT framework.
 
 
-🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/).
+🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/). Link to our paper: [arxiv](https://arxiv.org/pdf/2406.07502).
 
 ## Contents
 - [Install](#install)
