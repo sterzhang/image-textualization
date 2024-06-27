@@ -1,14 +1,8 @@
 # Image Textualization: An Automatic Framework for Creating Accurate and Detailed Image Descriptions
 ![image](https://github.com/sterzhang/image-textualization/assets/119802220/c72ff11a-2b39-4e20-88b5-d3f0d8f9eb42)
 
-### Plan
-- [x] Main code for IT framework.
-- [x] Data cleaning is on-going. 
-- [ ] Code for evaluation.
-- [x] Release the usage of our IT framework.
 
-
-🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/). Link to our paper: [arxiv](https://arxiv.org/pdf/2406.07502).
+🔥 Now, IT-170K dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/), which contain 219,437 image descriptions. Link to our paper: [arxiv](https://arxiv.org/pdf/2406.07502).
 
 ## Contents
 - [Install](#install)
