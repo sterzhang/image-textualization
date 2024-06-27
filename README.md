@@ -3,7 +3,7 @@
 
 ### Plan
 - [x] Main code for IT framework.
-- [x] Data cleaning is on-going. Expect to open-source 170K data before 6/17.
+- [x] Data cleaning is on-going. 
 - [ ] Code for evaluation.
 - [x] Release the usage of our IT framework.
 
