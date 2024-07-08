@@ -48,7 +48,6 @@ cd image-textualization
 conda create --name image-textualization python=3.8 -y
 conda activate image-textualization
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install -r requirements.txt
 ```
 ### 1.2 detectron2
 ```bash
