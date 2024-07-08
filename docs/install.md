@@ -63,6 +63,14 @@ git clone https://github.com/IDEA-Research/GroundingDINO.git
 cd GroundingDINO/
 pip install -e .
 ```
+### 1.4 SAM
+Follow the [SAM repo](https://github.com/facebookresearch/segment-anything) to install packages.
+
+### 1.5 GRiT
+Follow the instruction in [GRiT repo](https://github.com/JialianW/GRiT/blob/master/docs/INSTALL.md).
+
+### 1.6 LLama3
+Follow the instruction in [LLama3 repo](https://github.com/meta-llama/llama3).
 
 ## 2. Download Models
 ### 2.1 Create Folder
