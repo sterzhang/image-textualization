@@ -123,6 +123,8 @@ if __name__ == "__main__":
             image = data.get('image', '')
             bounding_boxes = data.get('bounding_boxes', '')
             objects = data.get('exist_obj_from_img', '')
+            objects = data.get('extr_obj_from_img', '')
+
             # objects = data.get('objects', '')
 
             # del_obj_from_desc = data.get('del_obj_from_desc')
@@ -181,7 +183,7 @@ if __name__ == "__main__":
                 
             output_data = {
                 'image': image,
-                'exist_obj_from_img': objects,
+                'extr_obj_from_img': objects,
                 'bounding_boxes': bounding_boxes,
                 'object_depth': box_depth_score,
                 'size': box_size,
