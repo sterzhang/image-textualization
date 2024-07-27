@@ -48,7 +48,6 @@ cd image-textualization
 conda create --name image-textualization python=3.8 -y
 conda activate image-textualization
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install -r requirements.txt
 ```
 ### 1.2 detectron2
 ```bash
@@ -64,6 +63,14 @@ git clone https://github.com/IDEA-Research/GroundingDINO.git
 cd GroundingDINO/
 pip install -e .
 ```
+### 1.4 SAM
+Follow the [SAM repo](https://github.com/facebookresearch/segment-anything) to install packages.
+
+### 1.5 GRiT
+Follow the instruction in [GRiT repo](https://github.com/JialianW/GRiT/blob/master/docs/INSTALL.md).
+
+### 1.6 LLama3
+Follow the instruction in [LLama3 repo](https://github.com/meta-llama/llama3).
 
 ## 2. Download Models
 ### 2.1 Create Folder
