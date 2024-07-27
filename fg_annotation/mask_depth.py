@@ -122,7 +122,7 @@ if __name__ == "__main__":
             data = json.loads(line)
             image = data.get('image', '')
             bounding_boxes = data.get('bounding_boxes', '')
-            objects = data.get('exist_obj_from_img', '')
+            # objects = data.get('exist_obj_from_img', '')
             objects = data.get('extr_obj_from_img', '')
 
             # objects = data.get('objects', '')
