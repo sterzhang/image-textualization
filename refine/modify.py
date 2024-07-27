@@ -244,7 +244,7 @@ def main(args):
             output_str = ""  
             json_obj = json.loads(line)
             image = json_obj.get("image")
-            objects = json_obj.get("exist_obj_from_img", [])
+            objects = json_obj.get("extr_obj_from_img", [])
             hallucinations = json_obj.get("del_obj_from_desc", [])
             boxes = json_obj.get("bounding_boxes")
             obj_depths = json_obj.get("object_depth")
