@@ -102,14 +102,14 @@ python fg_annotation/mask_depth.py \
 
 Then you will get <fg_anno.jsonl>:
 ```json
-{"image": "xxx.jpg", "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480}
+{"image": "xxx.jpg", "extr_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480}
 ```
 
 
 ## Textualization Recaptioning
 First concat your <fg_anno.jsonl>, <hal_from_desc.jsonl> together into <your.jsonl> as following:
 ```json
-{"image": "xxx.jpg", "del_obj_from_desc": ["hal2"], "exist_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480, "description": "xxxxxxxx."}
+{"image": "xxx.jpg", "del_obj_from_desc": ["hal2"], "extr_obj_from_img": ["obj2"], "bounding_boxes": [[418, 119, 639, 388]], "object_depth": [83], "size": [12428], "width": 640, "height": 480, "description": "xxxxxxxx."}
 ```
 
 Then run:
