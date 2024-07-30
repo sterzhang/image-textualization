@@ -2,7 +2,9 @@
 ![image](https://github.com/sterzhang/image-textualization/assets/119802220/c72ff11a-2b39-4e20-88b5-d3f0d8f9eb42)
 
 
-🔥 Dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/), which contain 219,437 image descriptions. Link to our paper: [arxiv](https://arxiv.org/pdf/2406.07502).
+## News🔥 
+- Fine-grained annotation can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/).
+- Dataset can be found in [🤗Huggingface](https://huggingface.co/datasets/Sterzhang/image-textualization/), which contain 219,437 image descriptions. Link to our paper: [arxiv](https://arxiv.org/pdf/2406.07502).
 
 ## Contents
 - [Install](#install)
